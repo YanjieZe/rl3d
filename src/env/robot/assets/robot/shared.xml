@@ -1,0 +1,65 @@
+<mujoco>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.043 0.055 0.051" rgb2="0.043 0.055 0.051" width="32" height="32"></texture>
+        <!-- <texture type="skybox" builtin="gradient" rgb1="1 1 1" width="32" height="32"></texture> -->
+        <texture name="texture_block" file="block.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="texture_wall" file="brick1.png" type="cube"></texture>
+        
+        <texture name="light_wood" file="../texture/light_wood.png" type="cube"/>
+        <material shininess=".1" name="light_wood" texture="light_wood" specular="0.4"/>
+
+        <material name="floor_mat" specular="0" shininess="0.0" reflectance="0" rgba="0.043 0.055 0.051 1"></material>
+        <texture builtin="flat" name="floor_tex" height="32" width="32" rgb1="1 1 1" type="cube"></texture>
+        <!-- <material name="floor_mat" specular="0" shininess="0.0" reflectance="0" rgba="0.2 0.3 0.3 1" texture="floor_tex"></material> -->
+       
+        <material name="table_mat" specular="0.5" shininess="0.8" reflectance="0" rgba="0.90 0.75 0.51 1"></material>
+        <material name="table_mat_white" specular="0.2" shininess="0.2" reflectance="0" rgba="1 1 1 1"></material>
+        <material name="pedestal_mat" specular="0.35" shininess="0.5" reflectance="0" rgba="0.705 0.585 0.405 1"></material>
+        <material name="block_mat" specular="0.5" shininess="0.9" reflectance="0.05" rgba="0.373 0.678 0.627 1"></material>
+        <material name="puck_mat" specular="0" shininess="0.5" reflectance="0" rgba="0.2 0.2 0.2 1"></material>
+        <material name="shelf_mat" specular="0.4" shininess="0.6" reflectance="0" rgba="0.994 0.849 0.861 1"></material>
+        <material name="shelflegs_mat" specular="0.4" shininess="0.6" reflectance="0" rgba="0.98 0.96 0.96 1"></material>
+
+        <material name="robot0:geomMat" shininess="0.03" specular="0.4"></material>
+        <material name="robot0:gripper_finger_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="robot0:gripper_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="background:gripper_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="robot0:arm_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="robot0:head_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="robot0:torso_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="robot0:base_mat" shininess="0.03" specular="0.4" reflectance="0"></material>
+        <material name="wall_brick" texture="texture_wall" shininess="0.03" reflectance="0" specular=".5"/>
+
+        <mesh name="link_base" file="link_base.STL" />
+        <mesh name="link1" file="link1.STL" />
+        <mesh name="link2" file="link2.STL" />
+        <mesh name="link3" file="link3.STL" />
+        <mesh name="link4" file="link4.STL" />
+        <mesh name="link5" file="link5.STL" />
+        <mesh name="link6" file="link6.STL" />
+        <mesh name="link7" file="link7.STL" />
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="left_outer_knuckle" file="left_outer_knuckle.STL" />
+        <mesh name="left_finger" file="left_finger.STL" />
+        <mesh name="left_inner_knuckle" file="left_inner_knuckle.STL" />
+        <mesh name="right_outer_knuckle" file="right_outer_knuckle.STL" />
+        <mesh name="right_finger" file="right_finger.STL" />
+        <mesh name="right_inner_knuckle" file="right_inner_knuckle.STL" />
+    </asset>
+
+    <equality>
+        <weld body1="robot0:mocap2" body2="link7" solimp="0.9 0.95 0.001" solref="0.02 1"></weld>
+    </equality>
+
+    <default>
+        <joint armature="1" damping="0.1" limited="true"/>
+         <default class="robot0:blue">
+            <geom rgba="0.086 0.506 0.767 1.0"></geom>
+        </default>
+
+        <default class="robot0:grey">
+            <geom rgba="0.356 0.361 0.376 1.0"></geom>
+        </default>
+
+    </default>
+</mujoco>

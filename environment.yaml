@@ -1,0 +1,17 @@
+name: rl3d
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch=1.9
+  - torchvision
+  - cudatoolkit=11.1
+  - pip
+  - pip:
+    - termcolor
+    - gym==0.21.0
+    - mujoco-py
+    - pandas
+    - wandb
+    - moviepy
+    - imageio
