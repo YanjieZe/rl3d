@@ -9,9 +9,11 @@ dependencies:
   - pip
   - pip:
     - termcolor
-    - gym==0.21.0
-    - mujoco-py
+    - gym==0.19.0
+    - mujoco-py==2.1.2.14
     - pandas
     - wandb
     - moviepy
     - imageio
+    - opencv-python
+    - kornia
